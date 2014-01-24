@@ -23,7 +23,7 @@
   
   function acsd_head_coodes() {
     // The Country/States "Database" file
-    echo "<script type="text/javascript" src="' . plugins_url( 'inc/js/country3.js' , __FILE__ ) . '" ></script>';
+    echo "<script type="text/javascript" src="' . plugins_url( 'inc/js/country3.js' , __FILE__ ) . '" ></script>";
     
     // This will add required attributes to State/Country <select> elements. 
     // Only useful when you can not directly edit html. 
@@ -41,7 +41,7 @@
  // Hooks
   
   // include in header
-  add_action('wp_head', 'acsd_head_coodes(');
+  add_action('wp_head', 'acsd_head_coodes');
   
   // inclyde in footer
   add_action('wp_footer', 'acsd_footer_codes');
