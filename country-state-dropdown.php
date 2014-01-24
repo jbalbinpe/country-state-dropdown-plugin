@@ -23,19 +23,22 @@
   
   function acsd_head_coodes() {
     // The Country/States "Database" file
-    echo "<script type="text/javascript" src="' . plugins_url( 'inc/js/country3.js' , __FILE__ ) . '" ></script>";
-    
-    // This will add required attributes to State/Country <select> elements. 
-    // Only useful when you can not directly edit html. 
-    echo "<script type="text/javascript">";
-    echo "  document.getElementById('country').setAttribute('onchange','print_state('state',this.selectedIndex);');";
-    echo "</script>";
+    ?>
+     <script type="text/javascript" src="<?php echo plugins_url( 'inc/js/country3.js' , __FILE__ )?>" ></script>
+     <script type="text/javascript">
+     // This will add required attributes to State/Country <select> elements. 
+     // Only useful when you can not directly edit html. 
+      document.getElementById('country').setAttribute('onchange','print_state('state',this.selectedIndex);');
+     </script>
+    <?php
   }
 
   // Footer code for automatic Country population. 
   
   function acsd_footer_codes() {
-    echo "<script type="text/javascript">print_country("country");</script>";
+    ?>
+     <script type="text/javascript">print_country("country");</script>
+    <?php
   }
 
  // Hooks
