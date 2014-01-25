@@ -25,11 +25,6 @@
     // The Country/States "Database" file
     ?>
      <script type="text/javascript" src="<?php echo plugins_url( 'inc/js/country3.js' , __FILE__ )?>" ></script>
-     <script type="text/javascript">
-     // This will add required attributes to State/Country <select> elements. 
-     // Only useful when you can not directly edit html. 
-      document.getElementById('country').setAttribute('onchange','print_state('state',this.selectedIndex);');
-     </script>
     <?php
   }
 
@@ -38,6 +33,18 @@
   function acsd_footer_codes() {
     ?>
      <script type="text/javascript">print_country("country");</script>
+     <script type="text/javascript">
+     // This will add required attributes to State/Country <select> elements. 
+     // Only useful when you can not directly edit html. 
+     function addOnchangeAttr()
+      {
+       var id=document.getElementsById("country");
+       var att=document.createAttribute("onchange");
+       att.value="print_state('state',this.selectedIndex);";
+       id.setAttributeNode(att);
+      }
+     addOnchangeAttr();
+     </script>
     <?php
   }
 
