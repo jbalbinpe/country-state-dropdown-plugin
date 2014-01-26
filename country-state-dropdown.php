@@ -38,7 +38,7 @@
      // Only useful when you can not directly edit html. 
      function addOnchangeAttr()
       {
-       var id=document.getElementsById("country");
+       var id=document.getElementById("country");
        var att=document.createAttribute("onchange");
        att.value="print_state('state',this.selectedIndex);";
        id.setAttributeNode(att);
